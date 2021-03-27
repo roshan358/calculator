@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>Calculator</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body style="text-align: center;">
+	<input type="text" id="no1" value="">
+	<select id="operation">
+	    <option value="0">Addition</option>
+	    <option value="1">Subtraction</option>
+	    <option value="2">Multiplication</option>
+	    <option value="3">Divide</option>
+	</select>
+	<input type="text" id="no2" value="">
+	<input type="button" onClick="calc();" value="Solve"><br/><br/>
+	
+<p id="space">The answer is : </p>
+	<script type="text/javascript">
+		function calc(){
+			var a = parseInt(document.getElementById('no1').value);
+			var b = parseInt(document.getElementById('no2').value);
+			var c = document.getElementById('operation').value;
+			var x;
+			switch(c){
+				case '0':
+				x = addition(a,b);
+				document.getElementById("space").innerHTML = 'The answer is '+x;
+				break;
+				case '1':
+				x = subtraction(a,b);
+document.getElementById("space").innerHTML = 'The answer is '+x;
+				break;
+				case '2':
+				x = multiplication(a,b);
+				document.getElementById("space").innerHTML = 'The answer is '+x;
+				break;
+				case '3':
+				x = division(a,b);
+				document.getElementById("space").innerHTML = 'The answer is '+x;
+				break;
+				default:
+				document.getElementById("space").innerHTML = 'Wrong input';
+				break;
+			}
+		}
+function addition(a,b){
+			return a+b;
+		}
+		function subtraction(a,b){
+			return a-b;
+		}
+		function multiplication(a,b){
+			return a*b;
+		}
+		function division(a,b){
+			return a/b;
+		}
+
+</script>
+</body>
+</html>
